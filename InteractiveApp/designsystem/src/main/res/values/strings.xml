@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">designsystem</string>
+    <string name="copy_to_clipboard">Copy to clipboard</string>
+    <string name="GeneratePassword">Generate Password</string>
+</resources>
