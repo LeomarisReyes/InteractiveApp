@@ -16,9 +16,7 @@ fun ColombiaPresidentDto.toColombiaPresident() = ColombiaPresident(
     startPeriodDate =  formatDate(startPeriodDate),
     endPeriodDate = endPeriodDate?.let { formatDate(it) },
     politicalParty = politicalParty,
-    description = description,
-    cityId = cityId,
-    city = city
+    description = description
 )
 
 fun formatDate(date: String): String {

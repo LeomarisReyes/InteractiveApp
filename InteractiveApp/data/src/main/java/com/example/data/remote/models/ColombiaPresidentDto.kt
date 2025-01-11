@@ -9,7 +9,5 @@ data class ColombiaPresidentDto(
     val startPeriodDate: String,
     val endPeriodDate: String? = null,
     val politicalParty: String,
-    val description: String,
-    val cityId: Int,
-    val city: String?
+    val description: String
 )

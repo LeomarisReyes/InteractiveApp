@@ -27,9 +27,16 @@ class PresidentListViewModel @Inject constructor(
     fun processEvent(viewEvent: ViewEvent) {
         when (viewEvent) {
             ViewEvent.OnPresident -> { coroutineScope.launch{
-                getPresidents()
+                 getPresidents()
                 _viewStateFlow.update { it.copy(loading = false) }
             } }
+            ViewEvent.OnGoBack -> {
+                _viewStateFlow.update { it.copy(navigateEffect = ViewEffect.GoBack) }
+            }
+            is ViewEvent.OnItemSelected -> {
+                _viewStateFlow.update { it.copy(navigateEffect = ViewEffect.Navigate("PresidentDetailsScreen/${viewEvent.itemId}")) }
+            }
+
             is ViewEvent.OnSearchPresident -> TODO()
         }
     }
@@ -50,16 +57,20 @@ class PresidentListViewModel @Inject constructor(
     data class ViewState(
         val presidents : List<ColombiaPresident> = emptyList(),
         val searchDescription : String = "",
-        val loading : Boolean = true
+        val loading : Boolean = true,
+        val navigateEffect: ViewEffect = ViewEffect.Navigate("")
     )
 
-    sealed interface ViewEvent{
+    sealed interface ViewEvent {
         data object OnPresident : ViewEvent
+        data object OnGoBack : ViewEvent
+        data class OnItemSelected(val itemId: Int) : ViewEvent
         data class OnSearchPresident(val searchDescription: String) : ViewEvent
     }
 
     sealed interface ViewEffect {
         data class Navigate(val route: String) : ViewEffect
+        data object GoBack : ViewEffect
     }
 
 }

@@ -1,6 +1,7 @@
 package com.example.feature.presidents.list
 
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,10 +14,18 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -66,19 +75,37 @@ fun PresidentListScreen(
         viewModel.processEvent(PresidentListViewModel.ViewEvent.OnPresident)
     }
 
+    LaunchedEffect(state.navigateEffect) {
+        when (val effect = state.navigateEffect) {
+            is PresidentListViewModel.ViewEffect.Navigate -> {
+                if (effect.route.isNotEmpty()) {
+                    navController.navigate(effect.route)
+                }
+            }
+
+            PresidentListViewModel.ViewEffect.GoBack -> TODO()
+        }
+    }
+
     Column(
         modifier = modifier
             .fillMaxSize()
             .padding(top = dimenXSmall16, start = dimenXSmall12, end = dimenXSmall12),
-        verticalArrangement = Arrangement.spacedBy(dimenXSmall15)
+        verticalArrangement = Arrangement.spacedBy(dimenXSmall12)
     ) {
+
+        Text(
+            text = stringResource(id = R.string.president_searchbar_title),
+            style = MaterialTheme.typography.titleMedium,
+            modifier = Modifier.padding(top = dimenXSmall8)
+        )
 
         CustomInputField(
             modifier = Modifier
                 .fillMaxWidth(),
             value = searchQuery,
             onValueChange = { searchQuery = it },
-            placeholder = stringResource( id = R.string.president_searchbar_placeholder)
+            placeholder = stringResource(id = R.string.president_searchbar_placeholder)
         )
 
         LazyColumn(
@@ -111,7 +138,16 @@ fun PresidentListScreen(
                         modifier = Modifier.height(205.dp),
                         title = item.politicalParty
                     ) {
-                        PresidentItem(president = item)
+                        PresidentItem(
+                            president = item,
+                            onItemSelected = {
+                                viewModel.processEvent(
+                                    PresidentListViewModel.ViewEvent.OnItemSelected(
+                                        itemId = item.id
+                                    )
+                                )
+                            }
+                        )
                     }
                     Spacer(modifier = Modifier.height(dimenXSmall16))
                 }
@@ -124,12 +160,17 @@ fun PresidentListScreen(
 @Composable
 private fun PresidentItem(
     modifier: Modifier = Modifier,
-    president: ColombiaPresident
+    president: ColombiaPresident,
+    onItemSelected: () -> Unit
 ) {
-    Column {
+    Column(
+        modifier = modifier
+            .clickable {
+                onItemSelected()
+            },
+    ) {
 
         Row(
-            modifier = modifier,
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {

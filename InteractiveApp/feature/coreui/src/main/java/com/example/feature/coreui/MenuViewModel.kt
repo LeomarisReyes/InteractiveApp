@@ -13,10 +13,10 @@ class MenuViewModel : ViewModel() {
     fun processEvent(viewEvent: ViewEvent) {
         when (viewEvent) {
             ViewEvent.OnGoToCapitalizer -> {
-                _viewStateFlow.update { it.copy(navigateEffect = ViewEffect.Navigate("RandomPasswordGenerator")) }
+                _viewStateFlow.update { it.copy(navigateEffect = ViewEffect.Navigate("CapitalizerGenerator")) }
             }
             ViewEvent.OnGoToPassword -> {
-                _viewStateFlow.update { it.copy(navigateEffect = ViewEffect.Navigate("CapitalizerGenerator")) }
+                _viewStateFlow.update { it.copy(navigateEffect = ViewEffect.Navigate("RandomPasswordGenerator")) }
             }
             ViewEvent.OnGoToPresidentsList -> {
                 _viewStateFlow.update { it.copy(navigateEffect = ViewEffect.Navigate("PresidentList")) }

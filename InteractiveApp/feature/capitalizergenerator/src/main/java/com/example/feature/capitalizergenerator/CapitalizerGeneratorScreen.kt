@@ -65,13 +65,13 @@ fun CapitalizerGeneratorScreen(
         InformationBoard(
             title = stringResource(id = R.string.phrase_settings)
         ) {
-//            CustomInputField(
-//                value = state.phraseToCapitalized,
-//                onValueChange = {
-//                    viewModel.processEvent(CapitalizerGeneratorViewModel.ViewEvent.OnPhraseChanged(it))
-//                },
-//                 placeholder =  stringResource(id = R.string.capitalizer_input_placeholder)
-//            )
+            CustomInputField(
+                value = state.phraseToCapitalized,
+                onValueChange = {
+                    viewModel.processEvent(CapitalizerGeneratorViewModel.ViewEvent.OnPhraseChanged(it))
+                },
+                 placeholder =  stringResource(id = R.string.capitalizer_input_placeholder)
+            )
         }
 
         StandardButton(

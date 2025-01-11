@@ -10,4 +10,7 @@ val dimenXSmall12 = 12.dp
 val dimenXSmall15 = 15.dp
 val dimenXSmall16 = 16.dp
 val dimenXSmall20 = 20.dp
+val dimenXLarge100 = 100.dp
 val dimenXLarge120 = 120.dp
+val dimenXLarge140 = 140.dp
+val dimenXLarge200 = 200.dp

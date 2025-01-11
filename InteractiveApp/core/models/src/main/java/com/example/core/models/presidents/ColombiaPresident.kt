@@ -1,4 +1,4 @@
-package com.example.domain.models
+package com.example.core.models.presidents
 
 data class ColombiaPresident(
     val id: Int = 0,

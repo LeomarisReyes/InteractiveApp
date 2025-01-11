@@ -6,9 +6,12 @@ import com.example.data.remote.repository.ColombiaPresidentRepository
 import com.example.data.remote.utils.NetworkResult
 import com.example.domain.models.ColombiaPresident
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -19,25 +22,41 @@ class PresidentDetailsViewModel @Inject constructor(
     private val _viewStateFlow = MutableStateFlow(ViewState())
     val viewStateFlow = _viewStateFlow.asStateFlow()
 
-    fun processEvent(viewEvent : ViewEvent) {
+    private val coroutineScope = CoroutineScope(Dispatchers.Default)
+
+
+    fun processEvent(viewEvent: ViewEvent) {
         when (viewEvent) {
             ViewEvent.OnBack -> TODO()
+            is ViewEvent.OnPresidentById -> {
+                coroutineScope.launch {
+                    getPresidentsByID(viewEvent.presidentId)
+                    _viewStateFlow.update { it.copy(loading = false) }
+                }
+            }
         }
     }
 
-//    suspend fun getPresident(id: Int){
-//        when (val response = colombiaPresidentRepository.getPresidents()){
-//            is NetworkResult.Success -> {_viewStateFlow.update { it.copy(president = response) }}
-//            is NetworkResult.ApiError -> TODO()
-//            is NetworkResult.ApiException -> TODO()
-//        }
-//    }
+
+    private suspend fun getPresidentsByID(presidentId: Int) {
+        when (val response = colombiaPresidentRepository.getPresidentById(presidentId)) {
+            is NetworkResult.Success -> {
+                _viewStateFlow.update {
+                    it.copy(president = response.data.toColombiaPresident())
+                }
+            }
+            is NetworkResult.ApiError -> TODO()
+            is NetworkResult.ApiException -> TODO()
+        }
+    }
 
     data class ViewState(
-        val president: ColombiaPresident = ColombiaPresident()
+        val president: ColombiaPresident = ColombiaPresident(),
+        val presidentId : Int = 0,
+        val loading : Boolean = true
     )
-
     sealed interface ViewEvent {
+        data class OnPresidentById(val presidentId : Int) : ViewEvent
         data object OnBack : ViewEvent
     }
 }
