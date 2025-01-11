@@ -37,6 +37,7 @@ android {
 
 dependencies {
     implementation(project(":designsystem"))
+    implementation(libs.hilt.navigation.compose)
     implementation(libs.androidx.lifecycle.viewModel.compose)
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.core.ktx)

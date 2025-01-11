@@ -1,35 +1,13 @@
 package com.example.feature.capitalizergenerator
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.lifecycle.HiltViewModel
-//import com.example.domain.models.ColombiaPresident
-//import com.example.domain.usercases.GetColombiaPresidentUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class CapitalizerGeneratorViewModel
-//@Inject constructor(
-//    private val colombiaPresidentUseCase: GetColombiaPresidentUseCase
-//)
-    : ViewModel() {
-
+class CapitalizerGeneratorViewModel : ViewModel() {
     private val _viewStateFlow = MutableStateFlow(ViewState())
     val viewStateFlow = _viewStateFlow.asStateFlow()
-
-//    fun getPresidents() {
-//        viewModelScope.launch {
-//            try {
-//                val ColombiaPresident = colombiaPresidentUseCase.execute();
-//             } catch (e: Exception) {
-//                // Manejar el error
-//            }
-//        }
-//    }
 
     fun processEvent(viewEvent: ViewEvent){
         when(viewEvent){
@@ -50,8 +28,6 @@ class CapitalizerGeneratorViewModel
         val zUppercase = 122
 
         var i = 0
-
-    //    getPresidents()
 
         while (i < myPhraseArray.size) {
             if (i == 0 || myMutableList[i].code == spaceCharacter) {

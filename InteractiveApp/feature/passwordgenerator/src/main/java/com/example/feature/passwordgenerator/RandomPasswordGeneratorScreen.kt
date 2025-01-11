@@ -15,6 +15,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
 import androidx.compose.material3.SliderDefaults
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
@@ -28,10 +29,10 @@ import androidx.compose.ui.platform.ClipboardManager
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.designsystem.ui.theme.Utils.dimenXLarge120
 import com.example.designsystem.ui.theme.Utils.dimenXSmall12
 import com.example.designsystem.ui.theme.Utils.dimenXSmall15
@@ -41,14 +42,15 @@ import com.example.designsystem.ui.theme.Utils.dimenXSmall5
 import com.example.designsystem.ui.theme.Utils.dimenXSmall8
 import com.example.designsystem.ui.theme.Utils.grayColor
 import com.example.designsystem.ui.theme.Utils.mainBackgroundColor
-import com.example.designsystem.ui.theme.Utils.mainIconColor
 import com.example.designsystem.ui.theme.component.buttons.StandardButton
 import com.example.designsystem.ui.theme.component.containers.InformationBoard
 import com.example.feature.passwordgenerator.RandomPasswordGeneratorViewModel.ViewEvent
 
 @Composable
 fun RandomPasswordGeneratorScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    navController: NavController,
+    snackbarHostState: SnackbarHostState
 ) {
     val viewModel : RandomPasswordGeneratorViewModel = viewModel()
     val state by viewModel.viewStateFlow.collectAsStateWithLifecycle()
@@ -137,15 +139,15 @@ fun GeneratedPassword(
                 style = MaterialTheme.typography.titleMedium
             )
 
-            IconButton(onClick = {
-                clipboardManager.setText(AnnotatedString(generatedPassword))
-            }) {
-                Icon(
-                    painter = painterResource(id = R.drawable.ic_copy),
-                    contentDescription = stringResource(id = com.example.designsystem.R.string.copy_to_clipboard),
-                    tint = mainIconColor
-                )
-            }
+//            IconButton(onClick = {
+//                clipboardManager.setText(AnnotatedString(generatedPassword))
+//            }) {
+//                Icon(
+//                    painter = painterResource(id = R.drawable.ic_copy),
+//                    contentDescription = stringResource(id = com.example.designsystem.R.string.copy_to_clipboard),
+//                    tint = mainIconColor
+//                )
+//            }
         }
     }
 }
@@ -234,15 +236,9 @@ fun Options(
                 checkedBorderColor = Color.Transparent,
                 checkedThumbColor = Color.White,
                 checkedTrackColor = mainBackgroundColor,
-                uncheckedThumbColor =  mainBackgroundColor,
+                uncheckedThumbColor = mainBackgroundColor,
                 uncheckedTrackColor = grayColor
             )
         )
     }
-}
-
-@Preview
-@Composable
-private fun RandomPasswordGeneratorScreenPreview() {
-    RandomPasswordGeneratorScreen()
 }

@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -26,9 +27,9 @@ import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.designsystem.ui.theme.Utils.dimenXLarge120
 import com.example.designsystem.ui.theme.Utils.dimenXSmall12
 import com.example.designsystem.ui.theme.Utils.dimenXSmall16
@@ -41,7 +42,9 @@ import com.example.designsystem.ui.theme.component.inputs.CustomInputField
 
 @Composable
 fun CapitalizerGeneratorScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    navController: NavController,
+    snackbarHostState: SnackbarHostState
 ){
     val viewModel : CapitalizerGeneratorViewModel = viewModel()
     val state by viewModel.viewStateFlow.collectAsStateWithLifecycle()
@@ -62,13 +65,13 @@ fun CapitalizerGeneratorScreen(
         InformationBoard(
             title = stringResource(id = R.string.phrase_settings)
         ) {
-            CustomInputField(
-                value = state.phraseToCapitalized,
-                onValueChange = {
-                    viewModel.processEvent(CapitalizerGeneratorViewModel.ViewEvent.OnPhraseChanged(it))
-                },
-                 placeholder = stringResource(id = R.string.capitalizer_input_placeholder)
-            )
+//            CustomInputField(
+//                value = state.phraseToCapitalized,
+//                onValueChange = {
+//                    viewModel.processEvent(CapitalizerGeneratorViewModel.ViewEvent.OnPhraseChanged(it))
+//                },
+//                 placeholder =  stringResource(id = R.string.capitalizer_input_placeholder)
+//            )
         }
 
         StandardButton(
@@ -84,7 +87,6 @@ fun CapitalizerGeneratorScreen(
             capitalizedPhrase = state.capitalizedPhrase,
             clipboardManager = clipboardManager
         )
-
     }
 }
 
@@ -136,17 +138,10 @@ fun CapitalizedPhrase(
             }) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_copy),
-                    contentDescription = stringResource(id = com.example.designsystem.R.string.copy_to_clipboard),
+                    contentDescription = "", // stringResource(id = R.string.copy_to_clipboard_description),
                     tint = mainIconColor
                 )
             }
         }
     }
 }
-
-@Preview
-@Composable
-private fun CapitalizerGeneratorScreenPreview(){
-    CapitalizerGeneratorScreen()
-}
-

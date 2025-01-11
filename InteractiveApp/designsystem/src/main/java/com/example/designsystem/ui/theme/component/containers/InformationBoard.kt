@@ -23,13 +23,14 @@ import com.example.designsystem.ui.theme.Utils.dimenXSmall20
 fun InformationBoard(
     modifier: Modifier = Modifier,
     backgroundColor: Color = Color.Transparent,
+    borderColor : Color = Color.Gray,
     title: String,
     containerDescription: @Composable () -> Unit
 ) {
     Box(
         modifier = modifier
             .background(backgroundColor)
-            .border(0.2.dp, Color.Gray, RoundedCornerShape(dimenXSmall16))
+            .border(0.2.dp, borderColor, RoundedCornerShape(dimenXSmall16))
             .fillMaxWidth()
             .padding(dimenXSmall20)
     ) {

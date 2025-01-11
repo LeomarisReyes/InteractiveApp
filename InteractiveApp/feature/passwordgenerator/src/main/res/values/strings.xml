@@ -13,4 +13,5 @@
     <string name="password_size">Password size</string>
     <string name="password_size_placeholder">Use the slider to choose a different password size.</string>
     <string name="your_generated_password">YOUR GENERATED PASSWORD IS</string>
+    <string name="copy_to_clipboard">Copy to clipboard</string>
 </resources>

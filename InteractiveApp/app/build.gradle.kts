@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.dagger.hilt.android")
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
@@ -50,7 +52,13 @@ android {
 dependencies {
     implementation(project(":feature:passwordgenerator"))
     implementation(project(":feature:capitalizergenerator"))
+    implementation(project(":feature:presidents"))
+    implementation(project(":feature:coreui"))
+    implementation(libs.hilt.navigation.compose)
+    kapt(libs.androidx.hilt.compiler)
+    kapt(libs.hiltCompiler)
     implementation(libs.hilt)
+    implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
