@@ -1,10 +1,10 @@
 package com.example.feature.presidents.details
 
 import androidx.lifecycle.ViewModel
+import com.example.core.models.presidents.ColombiaPresident
 import com.example.data.remote.mappers.toColombiaPresident
 import com.example.data.remote.repository.ColombiaPresidentRepository
 import com.example.data.remote.utils.NetworkResult
-import com.example.domain.models.ColombiaPresident
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

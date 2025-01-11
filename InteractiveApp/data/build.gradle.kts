@@ -35,7 +35,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":domain"))
+    implementation(project(":core:models"))
     kapt(libs.androidx.hilt.compiler)
     kapt(libs.hiltCompiler)
     implementation(libs.retrofit)

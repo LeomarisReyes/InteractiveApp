@@ -24,24 +24,15 @@ fun InteractiveApp(snackbarHostState: SnackbarHostState) {
         }
 
         composable("RandomPasswordGenerator") {
-            RandomPasswordGeneratorScreen(
-                navController = navController,
-                snackbarHostState = snackbarHostState
-            )
+            RandomPasswordGeneratorScreen(navController = navController)
         }
 
         composable("CapitalizerGenerator") {
-            CapitalizerGeneratorScreen(
-                navController = navController,
-                snackbarHostState = snackbarHostState
-            )
+            CapitalizerGeneratorScreen(navController = navController)
         }
 
         composable("PresidentList") {
-            PresidentListScreen(
-                navController = navController,
-                snackbarHostState = snackbarHostState
-            )
+            PresidentListScreen(navController = navController)
         }
 
         composable(

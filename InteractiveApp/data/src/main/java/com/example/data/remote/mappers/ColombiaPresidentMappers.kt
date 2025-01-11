@@ -1,7 +1,7 @@
 package com.example.data.remote.mappers
 
+import com.example.core.models.presidents.ColombiaPresident
 import com.example.data.remote.models.ColombiaPresidentDto
-import com.example.domain.models.ColombiaPresident
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter

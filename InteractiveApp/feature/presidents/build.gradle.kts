@@ -41,7 +41,7 @@ android {
 dependencies {
     implementation(project(":designsystem"))
     implementation(project(":data"))
-    implementation(project(":domain"))
+    implementation(project(":core:models"))
     implementation(libs.coil)
     implementation(libs.hilt)
     kapt(libs.androidx.hilt.compiler)

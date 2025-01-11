@@ -42,20 +42,18 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
+import com.example.core.models.presidents.ColombiaPresident
 import com.example.designsystem.ui.theme.Utils.dimenXSmall12
-import com.example.designsystem.ui.theme.Utils.dimenXSmall15
-import com.example.designsystem.ui.theme.Utils.dimenXSmall16
+ import com.example.designsystem.ui.theme.Utils.dimenXSmall16
 import com.example.designsystem.ui.theme.Utils.dimenXSmall8
 import com.example.designsystem.ui.theme.component.containers.InformationBoard
 import com.example.designsystem.ui.theme.component.inputs.CustomInputField
-import com.example.domain.models.ColombiaPresident
-import com.example.feature.presidents.R
+ import com.example.feature.presidents.R
 
 @Composable
 fun PresidentListScreen(
     modifier: Modifier = Modifier,
-    navController: NavController,
-    snackbarHostState: SnackbarHostState
+    navController: NavController
 ) {
 
     val viewModel: PresidentListViewModel = hiltViewModel()

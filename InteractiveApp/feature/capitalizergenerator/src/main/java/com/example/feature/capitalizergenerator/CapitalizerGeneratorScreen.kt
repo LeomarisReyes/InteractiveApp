@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -43,8 +42,7 @@ import com.example.designsystem.ui.theme.component.inputs.CustomInputField
 @Composable
 fun CapitalizerGeneratorScreen(
     modifier: Modifier = Modifier,
-    navController: NavController,
-    snackbarHostState: SnackbarHostState
+    navController: NavController
 ){
     val viewModel : CapitalizerGeneratorViewModel = viewModel()
     val state by viewModel.viewStateFlow.collectAsStateWithLifecycle()
