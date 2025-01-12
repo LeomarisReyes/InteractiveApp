@@ -29,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -59,6 +60,8 @@ fun InteractiveApplication() {
 
         Scaffold(
             topBar = {
+                val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
+
                 TopAppBar(
                     title = {
                         Text(
@@ -67,15 +70,17 @@ fun InteractiveApplication() {
                         )
                     },
                     navigationIcon = {
+                        if (currentRoute != "Menu") {
                             IconButton(onClick = {
                                 navController.popBackStack()
                             }
-                        ) {
-                            Icon(
-                                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                                contentDescription = stringResource(id = R.string.go_back),
-                                tint = Color.White
-                            )
+                            ) {
+                                Icon(
+                                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                                    contentDescription = stringResource(id = R.string.go_back),
+                                    tint = Color.White
+                                )
+                            }
                         }
                     },
                     colors = topAppBarColors(containerColor = colorResource(id = R.color.black))
