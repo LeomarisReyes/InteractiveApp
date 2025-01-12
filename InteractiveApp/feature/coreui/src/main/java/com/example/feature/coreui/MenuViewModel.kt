@@ -21,6 +21,10 @@ class MenuViewModel : ViewModel() {
             ViewEvent.OnGoToPresidentsList -> {
                 _viewStateFlow.update { it.copy(navigateEffect = ViewEffect.Navigate("PresidentList")) }
             }
+
+            ViewEvent.ConsumeEffect -> {
+                _viewStateFlow.update { it.copy(navigateEffect = ViewEffect.Navigate("")) }
+            }
         }
     }
 
@@ -32,6 +36,7 @@ class MenuViewModel : ViewModel() {
         data object OnGoToCapitalizer : ViewEvent
         data object OnGoToPassword : ViewEvent
         data object OnGoToPresidentsList : ViewEvent
+        data object ConsumeEffect : ViewEvent
     }
 
     sealed interface ViewEffect {

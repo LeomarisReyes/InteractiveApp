@@ -34,7 +34,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":designsystem"))
+    implementation(project(":core:designsystem"))
     implementation(libs.hilt.navigation.compose)
     implementation(libs.coil)
     implementation(libs.nav.version)

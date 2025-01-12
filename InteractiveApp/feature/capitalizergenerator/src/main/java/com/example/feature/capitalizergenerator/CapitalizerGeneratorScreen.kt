@@ -29,15 +29,15 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.example.designsystem.ui.theme.Utils.dimenXLarge120
-import com.example.designsystem.ui.theme.Utils.dimenXSmall12
-import com.example.designsystem.ui.theme.Utils.dimenXSmall16
-import com.example.designsystem.ui.theme.Utils.dimenXSmall20
-import com.example.designsystem.ui.theme.Utils.dimenXSmall8
-import com.example.designsystem.ui.theme.Utils.mainIconColor
-import com.example.designsystem.ui.theme.component.buttons.StandardButton
-import com.example.designsystem.ui.theme.component.containers.InformationBoard
-import com.example.designsystem.ui.theme.component.inputs.CustomInputField
+import com.example.core.designsystem.components.buttons.StandardButton
+import com.example.core.designsystem.components.containers.InformationBoard
+import com.example.core.designsystem.components.inputs.CustomInputField
+import com.example.core.designsystem.utils.dimenXLarge120
+import com.example.core.designsystem.utils.dimenXSmall12
+import com.example.core.designsystem.utils.dimenXSmall16
+import com.example.core.designsystem.utils.dimenXSmall20
+import com.example.core.designsystem.utils.dimenXSmall8
+import com.example.core.designsystem.utils.mainIconColor
 
 @Composable
 fun CapitalizerGeneratorScreen(

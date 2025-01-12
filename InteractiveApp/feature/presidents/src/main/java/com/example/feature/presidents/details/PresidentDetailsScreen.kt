@@ -33,11 +33,11 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
-import com.example.designsystem.ui.theme.Utils.dimenXLarge100
-import com.example.designsystem.ui.theme.Utils.dimenXLarge140
-import com.example.designsystem.ui.theme.Utils.dimenXLarge200
-import com.example.designsystem.ui.theme.Utils.dimenXSmall16
-import com.example.designsystem.ui.theme.Utils.dimenXSmall8
+import com.example.core.designsystem.utils.dimenXLarge100
+import com.example.core.designsystem.utils.dimenXLarge140
+import com.example.core.designsystem.utils.dimenXLarge200
+import com.example.core.designsystem.utils.dimenXSmall16
+import com.example.core.designsystem.utils.dimenXSmall8
 import com.example.feature.presidents.R
 
 @Composable

@@ -1,5 +1,6 @@
 package com.example.feature.coreui
 
+import android.view.Menu
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -19,24 +20,14 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import coil.compose.AsyncImage
-import com.example.designsystem.ui.theme.Utils.dimenXLarge100
-import com.example.designsystem.ui.theme.Utils.dimenXLarge140
-import com.example.designsystem.ui.theme.Utils.dimenXLarge200
-import com.example.designsystem.ui.theme.Utils.dimenXSmall16
-import com.example.designsystem.ui.theme.Utils.dimenXSmall20
-import com.example.designsystem.ui.theme.Utils.dimenXSmall8
-import com.example.designsystem.ui.theme.Utils.grayColor
-import com.example.designsystem.ui.theme.component.buttons.StandardButton
+import com.example.core.designsystem.components.buttons.StandardButton
+import com.example.core.designsystem.utils.dimenXSmall16
+import com.example.core.designsystem.utils.dimenXSmall20
+import com.example.core.designsystem.utils.grayColor
 
 @Composable
 fun MenuScreen(
@@ -54,6 +45,7 @@ fun MenuScreen(
                  }
             }
         }
+        viewModel.processEvent(MenuViewModel.ViewEvent.ConsumeEffect)
     }
 
     Column(

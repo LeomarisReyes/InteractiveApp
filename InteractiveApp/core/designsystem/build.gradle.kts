@@ -1,13 +1,11 @@
- plugins {
+plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("com.google.dagger.hilt.android")
-    alias(libs.plugins.kotlin.kapt)
- }
+}
 
 android {
-    namespace = "com.example.feature.presidents"
+    namespace = "com.example.core.designsystem"
     compileSdk = 34
 
     defaultConfig {
@@ -16,9 +14,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
-    buildFeatures {
-        compose = true
-    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -37,18 +33,7 @@ android {
     }
 }
 
- // TODO: Implementar los plugins, dependencias en donde se vaya a uzar hilt (buld, gradle
 dependencies {
-    implementation(project(":core:designsystem"))
-    implementation(project(":data"))
-    implementation(project(":core:models"))
-    implementation(libs.coil)
-    implementation(libs.hilt)
-    kapt(libs.androidx.hilt.compiler)
-    kapt(libs.hiltCompiler)
-    implementation(libs.hilt.navigation.compose)
-    implementation(libs.androidx.lifecycle.viewModel.compose)
-    implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -63,4 +48,5 @@ dependencies {
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
+    debugImplementation(libs.androidx.ui.test.manifest)
 }

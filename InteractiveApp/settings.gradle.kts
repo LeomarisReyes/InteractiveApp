@@ -21,7 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "InteractiveApp"
 include(":app")
-include(":designsystem")
+include(":core:designsystem")
 include(":feature:passwordgenerator")
 include(":feature:capitalizergenerator")
 include(":data")
@@ -29,3 +29,4 @@ include(":core:models")
 include(":feature:presidents")
 include(":core:models")
 include(":feature:coreui")
+include(":core:designsystem")

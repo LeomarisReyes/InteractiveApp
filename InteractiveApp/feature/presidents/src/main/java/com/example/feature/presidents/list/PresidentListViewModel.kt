@@ -5,6 +5,7 @@ import com.example.core.models.presidents.ColombiaPresident
 import com.example.data.remote.mappers.toColombiaPresident
 import com.example.data.remote.repository.ColombiaPresidentRepository
 import com.example.data.remote.utils.NetworkResult
+import com.example.feature.presidents.details.PresidentDetailsViewModel.ViewEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -37,6 +38,9 @@ class PresidentListViewModel @Inject constructor(
                 _viewStateFlow.update { it.copy(navigateEffect = ViewEffect.Navigate("PresidentDetailsScreen/${viewEvent.itemId}")) }
             }
 
+            is ViewEvent.ConsumeEffect -> {
+                _viewStateFlow.update { it.copy(navigateEffect = ViewEffect.Navigate("")) }
+            }
             is ViewEvent.OnSearchPresident -> TODO()
         }
     }
@@ -66,6 +70,7 @@ class PresidentListViewModel @Inject constructor(
         data object OnGoBack : ViewEvent
         data class OnItemSelected(val itemId: Int) : ViewEvent
         data class OnSearchPresident(val searchDescription: String) : ViewEvent
+        data object ConsumeEffect : ViewEvent
     }
 
     sealed interface ViewEffect {

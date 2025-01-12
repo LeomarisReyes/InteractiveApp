@@ -42,12 +42,12 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
+import com.example.core.designsystem.components.containers.InformationBoard
+import com.example.core.designsystem.components.inputs.CustomInputField
+import com.example.core.designsystem.utils.dimenXSmall12
+import com.example.core.designsystem.utils.dimenXSmall16
+import com.example.core.designsystem.utils.dimenXSmall8
 import com.example.core.models.presidents.ColombiaPresident
-import com.example.designsystem.ui.theme.Utils.dimenXSmall12
- import com.example.designsystem.ui.theme.Utils.dimenXSmall16
-import com.example.designsystem.ui.theme.Utils.dimenXSmall8
-import com.example.designsystem.ui.theme.component.containers.InformationBoard
-import com.example.designsystem.ui.theme.component.inputs.CustomInputField
  import com.example.feature.presidents.R
 
 @Composable
@@ -81,8 +81,12 @@ fun PresidentListScreen(
                 }
             }
 
-            PresidentListViewModel.ViewEffect.GoBack -> TODO()
+            PresidentListViewModel.ViewEffect.GoBack ->
+            {
+                navController.popBackStack()
+            }
         }
+        viewModel.processEvent(PresidentListViewModel.ViewEvent.ConsumeEffect)
     }
 
     Column(
