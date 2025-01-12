@@ -2,6 +2,8 @@ package com.example.interactiveapp
 
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -14,8 +16,7 @@ import com.example.feature.presidents.details.PresidentDetailsScreen
 import com.example.feature.presidents.list.PresidentListScreen
 
 @Composable
-fun InteractiveApp(snackbarHostState: SnackbarHostState) {
-    val navController = rememberNavController()
+fun InteractiveApp(snackbarHostState: SnackbarHostState, navController: NavHostController ) {
 
     NavHost(navController = navController, startDestination = "Menu") {
 
@@ -24,11 +25,11 @@ fun InteractiveApp(snackbarHostState: SnackbarHostState) {
         }
 
         composable("RandomPasswordGenerator") {
-            RandomPasswordGeneratorScreen(navController = navController)
+            RandomPasswordGeneratorScreen()
         }
 
         composable("CapitalizerGenerator") {
-            CapitalizerGeneratorScreen(navController = navController)
+            CapitalizerGeneratorScreen()
         }
 
         composable("PresidentList") {

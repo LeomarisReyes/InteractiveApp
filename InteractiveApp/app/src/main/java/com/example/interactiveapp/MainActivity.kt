@@ -67,9 +67,9 @@ fun InteractiveApplication() {
                         )
                     },
                     navigationIcon = {
-                        IconButton(onClick = {
-                            navController.popBackStack()
-                        }
+                            IconButton(onClick = {
+                                navController.popBackStack()
+                            }
                         ) {
                             Icon(
                                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
@@ -84,7 +84,7 @@ fun InteractiveApplication() {
             snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
         ) { paddingValues ->
             Column(modifier = Modifier.padding(paddingValues)) {
-                InteractiveApp(snackbarHostState = snackbarHostState)
+                InteractiveApp(snackbarHostState = snackbarHostState, navController = navController)
             }
         }
     }

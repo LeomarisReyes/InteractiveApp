@@ -47,8 +47,7 @@ import com.example.feature.passwordgenerator.RandomPasswordGeneratorViewModel.Vi
 
 @Composable
 fun RandomPasswordGeneratorScreen(
-    modifier: Modifier = Modifier,
-    navController: NavController
+    modifier: Modifier = Modifier
 ) {
     val viewModel : RandomPasswordGeneratorViewModel = viewModel()
     val state by viewModel.viewStateFlow.collectAsStateWithLifecycle()

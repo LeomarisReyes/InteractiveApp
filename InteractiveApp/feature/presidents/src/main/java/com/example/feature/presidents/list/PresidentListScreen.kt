@@ -80,12 +80,8 @@ fun PresidentListScreen(
                     navController.navigate(effect.route)
                 }
             }
-
-            PresidentListViewModel.ViewEffect.GoBack ->
-            {
-                navController.popBackStack()
-            }
-        }
+            PresidentListViewModel.ViewEffect.GoBack -> TODO()
+         }
         viewModel.processEvent(PresidentListViewModel.ViewEvent.ConsumeEffect)
     }
 

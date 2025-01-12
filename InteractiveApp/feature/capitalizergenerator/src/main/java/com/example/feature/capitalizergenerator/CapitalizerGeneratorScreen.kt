@@ -41,8 +41,7 @@ import com.example.core.designsystem.utils.mainIconColor
 
 @Composable
 fun CapitalizerGeneratorScreen(
-    modifier: Modifier = Modifier,
-    navController: NavController
+    modifier: Modifier = Modifier
 ){
     val viewModel : CapitalizerGeneratorViewModel = viewModel()
     val state by viewModel.viewStateFlow.collectAsStateWithLifecycle()
@@ -77,7 +76,8 @@ fun CapitalizerGeneratorScreen(
                 id = R.string.capitalized_description
             ),
             onButtonClick = {
-                viewModel.processEvent(CapitalizerGeneratorViewModel.ViewEvent.OnCapitalizedPhrase)
+                if(state.phraseToCapitalized.isNotEmpty())
+                    viewModel.processEvent(CapitalizerGeneratorViewModel.ViewEvent.OnCapitalizedPhrase)
               }
         )
 
