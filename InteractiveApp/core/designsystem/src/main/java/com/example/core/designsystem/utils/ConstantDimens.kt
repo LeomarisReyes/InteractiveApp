@@ -15,3 +15,4 @@ val dimenXLarge100 = 100.dp
 val dimenXLarge120 = 120.dp
 val dimenXLarge140 = 140.dp
 val dimenXLarge200 = 200.dp
+val dimenXLarge205 = 205.dp
