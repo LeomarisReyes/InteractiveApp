@@ -21,8 +21,7 @@ The Interactive App, built with Kotlin and Compose for Android, displays a list 
 
 ### Requeriments
 
-Create an application with the following features:
-
+Create an Android application with the following functionalities:
 
 |No.| Description |
 |--|--|
