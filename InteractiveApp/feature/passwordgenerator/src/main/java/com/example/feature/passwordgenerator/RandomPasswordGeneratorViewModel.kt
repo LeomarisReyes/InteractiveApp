@@ -17,7 +17,6 @@ class RandomPasswordGeneratorViewModel : ViewModel() {
 
     fun processEvent(viewEvent: ViewEvent) {
         when (viewEvent) {
-            ViewEvent.OnCopyPassword -> TODO()
             ViewEvent.OnGeneratedPassword -> generatePassword()
             is ViewEvent.OnIncludeNumberChanged -> _viewStateFlow.update { it.copy(includeNumber = viewEvent.isEnabled) }
             is ViewEvent.OnIncludeSymbolChanged -> _viewStateFlow.update { it.copy(includeSymbol = viewEvent.isEnabled) }
@@ -99,7 +98,6 @@ class RandomPasswordGeneratorViewModel : ViewModel() {
         data class OnIncludeSymbolChanged(val isEnabled: Boolean) : ViewEvent
         data class OnSizeChanged(val size: Float) : ViewEvent
         data object OnGeneratedPassword : ViewEvent
-        data object OnCopyPassword : ViewEvent
     }
 
 }
