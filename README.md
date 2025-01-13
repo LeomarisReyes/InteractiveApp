@@ -19,7 +19,7 @@ The Interactive App, built with Kotlin and Compose for Android, displays a list 
 
 Additionally, it supports both light and dark modes, providing an optimal user experience in any environment.
 
-⚠ *This application was created specifically for technical testing purposes. The requested requirements and all the features of this app are detailed below.* 
+⚠ *This application was created specifically for technical testing purposes. All feature requirements are detailed below.* 
 
 ### Requeriments
 
