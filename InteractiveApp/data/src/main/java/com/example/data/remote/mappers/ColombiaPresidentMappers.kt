@@ -9,14 +9,14 @@ import java.util.Date
 import java.util.Locale
 
 fun ColombiaPresidentDto.toColombiaPresident() = ColombiaPresident(
-    id = id,
-    image = image,
-    name = name,
-    lastName = lastName,
-    startPeriodDate =  formatDate(startPeriodDate),
+    id = id?:0,
+    image = image.orEmpty(),
+    name = name.orEmpty(),
+    lastName = lastName.orEmpty(),
+    startPeriodDate =  formatDate(startPeriodDate.orEmpty(),),
     endPeriodDate = endPeriodDate?.let { formatDate(it) },
-    politicalParty = politicalParty,
-    description = description
+    politicalParty = politicalParty.orEmpty(),
+    description = description.orEmpty(),
 )
 
 fun formatDate(date: String): String {

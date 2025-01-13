@@ -27,7 +27,7 @@ abstract class NetworkModule {
 
         @Provides
         @Singleton
-        fun provideGson() :Gson { // TODO: Utilizar Kotlin Serialization
+        fun provideGson() :Gson {
             return Gson()
         }
 

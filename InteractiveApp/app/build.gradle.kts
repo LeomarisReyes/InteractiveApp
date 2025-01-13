@@ -53,7 +53,7 @@ dependencies {
     implementation(project(":feature:passwordgenerator"))
     implementation(project(":feature:capitalizergenerator"))
     implementation(project(":feature:presidents"))
-    implementation(project(":feature:coreui"))
+    implementation(project(":feature:menu"))
     implementation(libs.hilt.navigation.compose)
     kapt(libs.androidx.hilt.compiler)
     kapt(libs.hiltCompiler)
