@@ -1,5 +1,6 @@
 package com.example.data.remote.di
 
+import com.example.data.BuildConfig
 import com.example.data.remote.apis.ColombiaPresidentsApi
 import com.example.data.remote.repository.ColombiaPresidentRepository
 import com.example.data.remote.repository.implementations.ColombiaPresidentRepositoryImpl
@@ -23,7 +24,6 @@ abstract class NetworkModule {
     ) : ColombiaPresidentRepository
 
     companion object {
-        private val BASE_URL = "https://api-colombia.com/api/v1/"  // TODO: Usar gradle secrets.
 
         @Provides
         @Singleton
@@ -34,7 +34,7 @@ abstract class NetworkModule {
         @Provides
         fun provideRetrofit(gson: Gson): Retrofit {
             return Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(BuildConfig.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
         }
