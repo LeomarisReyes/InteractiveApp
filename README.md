@@ -17,6 +17,8 @@ ___
 
 The Interactive App, built with Kotlin and Compose for Android, displays a list of Colombian presidents from the API-Colombia. It includes search functionality, a paginated list, and the ability to view detailed information about each president. The app also features a customizable password generator, allowing users to define settings like length and inclusion of symbols or letter case.
 
+Additionally, it supports both light and dark modes, providing an optimal user experience in any environment.
+
 ⚠ *This application was created specifically for technical testing purposes. The requested requirements and all the features of this app are detailed below.* 
 
 ### Requeriments
