@@ -24,10 +24,8 @@ class PresidentDetailsViewModel @Inject constructor(
 
     private val coroutineScope = CoroutineScope(Dispatchers.Default)
 
-
     fun processEvent(viewEvent: ViewEvent) {
         when (viewEvent) {
-            ViewEvent.OnBack -> TODO()
             is ViewEvent.OnPresidentById -> {
                 coroutineScope.launch {
                     getPresidentsByID(viewEvent.presidentId)
@@ -57,6 +55,5 @@ class PresidentDetailsViewModel @Inject constructor(
     )
     sealed interface ViewEvent {
         data class OnPresidentById(val presidentId : Int) : ViewEvent
-        data object OnBack : ViewEvent
     }
 }

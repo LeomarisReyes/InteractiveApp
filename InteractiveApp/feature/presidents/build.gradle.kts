@@ -37,8 +37,7 @@ android {
     }
 }
 
- // TODO: Implementar los plugins, dependencias en donde se vaya a uzar hilt (buld, gradle
-dependencies {
+ dependencies {
     implementation(project(":core:designsystem"))
     implementation(project(":data"))
     implementation(project(":core:models"))
