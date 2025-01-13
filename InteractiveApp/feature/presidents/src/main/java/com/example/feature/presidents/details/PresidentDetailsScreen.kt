@@ -42,9 +42,7 @@ import com.example.feature.presidents.R
 
 @Composable
 fun PresidentDetailsScreen(
-    presidentId: Int,
-    navController: NavController,
-    snackbarHostState: SnackbarHostState
+    presidentId: Int
 ) {
     val viewModel: PresidentDetailsViewModel = hiltViewModel()
     val state by viewModel.viewStateFlow.collectAsStateWithLifecycle()
@@ -99,7 +97,7 @@ fun TimelineItem(
     Box(
         modifier = Modifier
             .fillMaxWidth(),
-         contentAlignment = Alignment.TopCenter
+        contentAlignment = Alignment.TopCenter
     ) {
         Image(
             painter = painterResource(id = R.drawable.ic_colombian_flag),
@@ -174,7 +172,7 @@ fun ContentInformation(
 
         Spacer(modifier = Modifier.height(dimenXSmall16))
         Text(
-            text = stringResource(id = R.string.presidential_description) ,
+            text = stringResource(id = R.string.presidential_description),
             style = MaterialTheme.typography.titleMedium
         )
 

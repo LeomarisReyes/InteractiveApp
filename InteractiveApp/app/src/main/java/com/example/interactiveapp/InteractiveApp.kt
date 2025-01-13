@@ -43,9 +43,7 @@ fun InteractiveApp(snackbarHostState: SnackbarHostState, navController: NavHostC
         ) { navBackStackEntry ->
             val presidentId = navBackStackEntry.arguments?.getInt("presidentId")
             PresidentDetailsScreen(
-                presidentId = presidentId ?:0,
-                navController = navController,
-                snackbarHostState = snackbarHostState
+                presidentId = presidentId ?:0
             )
         }
     }
