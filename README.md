@@ -13,17 +13,15 @@ ___
 
 ### General information
 
-### Description
+### Description 
 
-Make-up App was created with Kotlin and Compose for Android. This app gives you access to a complete list of cosmetic products loaded from an API. You can also see the details of each product by tapping on them. This includes the name, brand, description, available colors, and tags.
-
-The application also supports light and dark appearance modes. You can easily identify it on your device by looking for the lipstick icon.
+The Interactive App, built with Kotlin and Compose for Android, displays a list of Colombian presidents from the API-Colombia. It includes search functionality, a paginated list, and the ability to view detailed information about each president. The app also features a customizable password generator, allowing users to define settings like length and inclusion of symbols or letter case.
 
 ⚠ *This application was created specifically for technical testing purposes. The requested requirements and all the features of this app are detailed below.* 
 
 ### Requeriments
 
-Create an application with the following points:
+Create an application with the following features:
 
 
 |No.| Description |
@@ -76,13 +74,13 @@ Finally, the Password Generator: This screen is designed to randomly generate a 
 ### Built With
 
 - [Compose](https://developer.android.com/jetpack/compose/) 
-- [Compose navigation](https://developer.android.com/jetpack/compose/navigation?hl=es-419) ![version](https://img.shields.io/badge/version-1.3.9-pink)
-- [Material](https://m3.material.io) ![version](https://img.shields.io/badge/version-3-pink)
-- [Coroutines](https://developer.android.com/kotlin/coroutines) ![version](https://img.shields.io/badge/version-3-pink)
-- [Coil](https://github.com/coil-kt/coil) ![version](https://img.shields.io/badge/version-1.4.01-pink)
-- [Retrofit](https://square.github.io/retrofit/) ![version](https://img.shields.io/badge/version-2.9.0-pink)
-- [Dagger Hilt](https://developer.android.com/jetpack/androidx/releases/hilt?hl=es-419) ![version](https://img.shields.io/badge/version-2.44-pink)
-- [Gson](https://github.com/google/gson) ![version](https://img.shields.io/badge/version-2.8.8-pink)
+- [Compose navigation](https://developer.android.com/jetpack/compose/navigation?hl=es-419) 
+- [Material](https://m3.material.io)
+- [Coroutines](https://developer.android.com/kotlin/coroutines)  
+- [Coil](https://github.com/coil-kt/coil)  
+- [Retrofit](https://square.github.io/retrofit/)  
+- [Dagger Hilt](https://developer.android.com/jetpack/androidx/releases/hilt?hl=es-419)  
+- [Gson](https://github.com/google/gson)  
 
 ___
 
