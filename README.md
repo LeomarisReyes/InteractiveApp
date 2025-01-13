@@ -1,16 +1,13 @@
  ![version](https://img.shields.io/badge/version-1.0.0-pink)
  
-## 💄 Interactive Android App
+## 🗒️ Interactive Android App
 
 ### Table of Contents:
 
 - [General information](#general-information)
 	 - [Description](#description)
-	 - [Requeriments](#requeriments)
-  - [Extras requeriments](#extra-requeriments)
+	 - [Requeriments](#requeriments) 
 - [Feature Demo](#feature-demo)
-	 - [API Documentation](#api-documentation)
-	 - [Built With](#built-with) 
 
 ___
 
@@ -72,6 +69,9 @@ A screen was developed where you can enter a phrase, and upon clicking the butto
 
 #### ➖ 3. Password generator
 
+Finally, the Password Generator: This screen is designed to randomly generate a password, allowing you to customize the settings for the key. You can choose to include uppercase letters, lowercase letters, symbols, and set the desired password length.
+
+<!-- Agregar Demo aqui -->	
 
 ### Built With
 
