@@ -38,9 +38,6 @@ In this session, you will explore visual resources designed to showcase each fun
 The test requires three functionalities, so an intermediate menu was created within the app to provide a more user-friendly experience, allowing users to easily select each functionality as an option.
 
 
-<p align="left"><img src="https://github.com/user-attachments/assets/2da68544-affd-4a43-8aa2-3ac3b0c2c082" width=420 height=800/></p> 
-
-
 #### ➖ 1. Colombian Presidents: List, Search, and Details
 
 To fulfill this requirement, a view was implemented that consumes the public Colombian data API, API-Colombia (https://api-colombia.com), specifically the presidents endpoint, which allowed me to display the list of presidents interactively. The features include:
@@ -55,22 +52,15 @@ By selecting any president from the list, the user is taken to a screen that sho
 The application includes a search bar that allows filtering the list of presidents by name. As the user types in the search field, the list automatically updates to show only the presidents whose names match the entered term.
 
 **Public API Used:**
-The data source used is API-Colombia, a public API with which I have collaborated on open-source contributions, providing information about Colombian presidents, among other Colombian-related data.
-<p align="left"><img src="https://github.com/LeomarisReyes/FashionMakeUp/blob/RemoteData/Images/LigthMode.png" width=860 height=420/></p> 
-
-<!-- Agregar Demo aqui -->	
+The data source used is API-Colombia, a public API with which I have collaborated on open-source contributions, providing information about Colombian presidents, among other Colombian-related data.	
 
 #### ➖ 2. Capitalizer generator
 
 A screen was developed where you can enter a phrase, and upon clicking the button, it converts the first letter of each word to uppercase while changing the remaining letters to lowercase, if necessary.
 
-<!-- Agregar Demo aqui -->	
-
 #### ➖ 3. Password generator
 
 Finally, the Password Generator: This screen is designed to randomly generate a password, allowing you to customize the settings for the key. You can choose to include uppercase letters, lowercase letters, symbols, and set the desired password length.
-
-<!-- Agregar Demo aqui -->	
 
 ### Built With
 
